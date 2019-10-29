@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'reactstrap';
 import "./index.scss";
 
 const Content = (props) => {
-    const { photoAlbums, loading } = props
+    const { photoAlbums, loading, deletePhotos } = props
     if (photoAlbums) {
         const filterItems = photoAlbums.slice(0, 10)
         return (
@@ -25,6 +25,11 @@ const Content = (props) => {
                     )
                 })
                 }   
+                    <Row>
+                        <Col>
+                            <button onClick={deletePhotos}>Delete Photos</button>
+                        </Col>
+                    </Row>
                 </Container>
             </div>
         )
