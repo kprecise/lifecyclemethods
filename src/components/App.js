@@ -11,9 +11,7 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            componentMounted: false,
-            pageReady: false,
-            photoStatus: false
+            pageReady: false
         }
         this.deletePhotos = this.deletePhotos.bind(this);
     }
@@ -35,19 +33,10 @@ class App extends React.Component {
         );
     }
 
-    componentDidUpdate(prevProps) {
-        // if (prevProps.photoAlbums !== this.state.photoAlbums) {
-        //     this.setState({ photoStatus: true });
-        // }
-        console.log('prevProps photo status', prevProps.photoStatus)
-        console.log('state photos status', this.state.photoStatus)
-    }    
-
     deletePhotos() {
         this.setState(
             { 
-                photoAlbums: undefined,
-                photoStatus: true
+                photoAlbums: undefined
             }
         );
     }
