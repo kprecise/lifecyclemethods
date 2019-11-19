@@ -32,7 +32,6 @@ class App extends React.Component {
             1000
         );
     }
-
     deletePhotos() {
         this.setState(
             { 

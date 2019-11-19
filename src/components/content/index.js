@@ -6,7 +6,7 @@ class Content extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            photosStatus: null
+            photosStatus: false
         }
     }    
     componentDidUpdate(prevProps) {
