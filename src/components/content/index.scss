@@ -1,11 +1,26 @@
 
 .content {
-    img {
-        width: 80px;
-        height: 80px;
-    }
    h2 {
-       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-       font-size: 18px;
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     font-size: 20px;
+     text-transform: capitalize;
    }
+  img {
+    float: right;
+    width: 70px;
+    height: 70px;
+  }
+  .item {
+    a {
+      display: block;
+    }
+    &:after {
+      content: '';
+      display: block;
+      border-bottom: 1px #ccc solid;
+      width: 100%;
+      height: 1px;
+      margin: 1rem 0;
+    }
+  }
 }
