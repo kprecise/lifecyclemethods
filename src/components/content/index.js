@@ -1,7 +1,6 @@
 import React from 'react'
-import {
-  Row, Col, Button, Alert
-} from 'reactstrap'
+import Loading from '../loading'
+import { Row, Col, Button, Alert } from 'reactstrap'
 import './index.scss'
 
 class Content extends React.Component {
@@ -11,10 +10,11 @@ class Content extends React.Component {
       photoStatus: 'populated',
       receivedProps: false
     }
-    this.renderPhotosAlbums = this.renderPhotosAlbums.bind(this)
   }
 
+  // componentDidUpdate
   componentDidUpdate(prevProps) {
+    // Check that photoAlbums in props was set to undefined and that previous props was an object containing the data
     if (this.props.photoAlbums === undefined && typeof prevProps.photoAlbums === 'object') {
       this.setState(
         {
@@ -24,6 +24,7 @@ class Content extends React.Component {
     }
   }
 
+  // componentWillReceiveProps
   componentWillReceiveProps(nextProps) {
     if (nextProps) {
       this.setState(
@@ -34,6 +35,7 @@ class Content extends React.Component {
     }
   }
 
+  // Display photo albums data
   renderPhotosAlbums() {
     const {
       photoAlbums,
@@ -69,14 +71,11 @@ class Content extends React.Component {
 
   render() {
     const {
-      photoAlbums,
-      loading
+      photoAlbums
     } = this.props
 
     const isPhotoStatusEmpty = this.state.photoStatus === 'empty'
     const didComponentReceiveProps = this.state.receivedProps
-    console.log('isPhotoStatusEmpty', isPhotoStatusEmpty)
-
     return (
       <div className="content">
         {didComponentReceiveProps && (
@@ -91,7 +90,7 @@ class Content extends React.Component {
         }
         {
             !photoAlbums ? (
-              <div>{loading}</div>
+              <Loading message="Content is loading........." />
             ) : this.renderPhotosAlbums()
           }
         { isPhotoStatusEmpty
