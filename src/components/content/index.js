@@ -1,5 +1,4 @@
 import React from 'react'
-import Loading from '../loading'
 import { Row, Col, Button, Alert } from 'reactstrap'
 import './index.scss'
 
@@ -89,9 +88,9 @@ class Content extends React.Component {
         )
         }
         {
-            !photoAlbums ? (
-              <Loading message="Content is loading........." />
-            ) : this.renderPhotosAlbums()
+            photoAlbums && (
+              this.renderPhotosAlbums()
+            )
           }
         { isPhotoStatusEmpty
         && (

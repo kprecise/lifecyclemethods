@@ -17,6 +17,10 @@ class App extends React.Component {
 
   // componentDidMount
   componentDidMount() {
+    this.getData()
+  }
+
+  getData() {
     axios.get('https://jsonplaceholder.typicode.com/albums/1/photos')
       .then((res) => {
         const photos = res.data
@@ -35,7 +39,8 @@ class App extends React.Component {
   deletePhotos() {
     this.setState(
       {
-        photoAlbums: undefined
+        photoAlbums: undefined,
+        pageReady: true
       }
     )
   }
