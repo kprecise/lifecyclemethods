@@ -27,7 +27,7 @@ Implementation of Reactstrap for a responsive layout
 # Install dependencies
 npm install
 
-# Serve on localhost:3000
+# Serve on localhost:8080
 npm run dev
 
 # Build for production
